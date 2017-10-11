@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Crusel Exsample</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/jquery.bxslider.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.green.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.js"></script>
+    <style>
+        body{
+            
+        }
+        .container{
+            margin: 0 auto;
+            padding: 40px;            
+            width: 90%;
+        }
+        
+        .slick_container{
+            color: #333;
+            background: #419be0;    
+        }
+        
+        .slick-slide{
+            text-align: center;
+            color: #419be0;
+            background: white;
+            margin: 0 5px;
+        }
+        
+        .bxslider_item{
+            text-align: center;
+            margin: 0 5px;
+        }
+        
+        .swiper-container{
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Slick</h2>
+    <div class="container slick_container">
+        <ul class="slick_item">
+            <li><h3>1</h3></li>
+            <li><h3>2</h3></li>
+            <li><h3>3</h3></li>
+            <li><h3>4</h3></li>
+            <li><h3>5</h3></li>
+            <li><h3>6</h3></li>
+        </ul>
+    </div>
+    
+    <h2>bxslider</h2>
+    <div class="container bxslider_container">
+        <ul class="bxslider_item">
+            <li>
+                <h3>1</h3>
+            </li>
+            <li>
+                <h3>2</h3>
+            </li>
+            <li>
+                <h3>3</h3>
+            </li>
+            <li>
+                <h3>4</h3>
+            </li>
+            <li>
+                <h3>5</h3>
+            </li>
+            <li>
+                <h3>6</h3>
+            </li>
+        </ul>
+    </div>
+
+    <h2>OwlCarousel</h2>
+    <div class="container owl-carousel owl-theme">
+        <div class="item">
+            <h3>1</h3>
+        </div>
+        <div class="item">
+            <h3>2</h3>
+        </div>
+        <div class="item">
+            <h3>3</h3>
+        </div>
+        <div class="item">
+            <h3>4</h3>
+        </div>
+        <div class="item">
+            <h3>5</h3>
+        </div>
+        <div class="item">
+            <h3>6</h3>
+        </div>
+   </div>
+   
+   <h2>Swiper</h2>
+   <div class="swiper-container">
+       <div class="swiper-wrapper">
+           <div class="swiper-slide">
+               <h3>1</h3>
+           </div>
+           <div class="swiper-slide">
+               <h3>2</h3>
+           </div>
+           <div class="swiper-slide">
+               <h3>3</h3>
+           </div>
+           <div class="swiper-slide">
+               <h3>4</h3>
+           </div>
+           <div class="swiper-slide">
+               <h3>5</h3>
+           </div>
+           <div class="swiper-slide">
+               <h3>6</h3>
+           </div>
+       </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+   </div>
+   
+    <script>
+        $(function() {
+            $('.slick_item').slick({
+                dots:true,
+                infinite:true,
+                slidesToShow:2,
+                slidesToScroll:1,   
+            });
+            
+            $('.bxslider_item').bxSlider({
+                minSlides:2,
+                maxSlides:2,
+                moveSlides:1,
+                slideMargin :10,
+                slideWidth:5000,
+            });
+            
+            $('.owl-carousel').owlCarousel({
+                loop:true,
+                margin:10,
+                nav:true,
+                items:2,
+                center:true,
+            });
+            
+            new Swiper('.swiper-container',{
+                loop:true,
+                spaceBetween : 10,
+                slidesPerView : 2,
+                centeredSlides: true,
+                //watchSlidesProgress : true,
+                pagination: '.swiper-pagination',
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev'
+            });
+        });
+    </script>
+</body>
+</html>
