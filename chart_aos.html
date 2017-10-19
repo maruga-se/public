@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Chart.js AOS.js</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.js"></script>
+    <style type="text/css">
+        .container{
+            margin:400px auto;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" data-aos="fade-up" data-aos-duration="3000">
+        <canvas id="canvas1"></canvas>
+    </div>
+    <div class="container" data-aos="flip-up">
+        <canvas id="canvas2"></canvas>
+    </div>
+    <div class="container" data-aos="fade-zoom-in" data-aos-delay="300" data-aos-easing="ease-in-back">
+        <canvas id="canvas3"></canvas>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded',
+                                    function(){
+                                        var chartData1 = {
+                                            labels : [
+                                                '17/10/1','17/10/2','17/10/3','17/10/4','17/10/5'
+                                            ],
+                                            datasets : [{
+                                                label:'data1',
+                                                data:['5','4','3','4','6'],
+                                                borderColor:'rgba(255,0,0,1)',
+                                                fill:false
+                                            }]
+                                        };
+                                        var ctx = document.getElementById("canvas1").getContext("2d");
+                                        new Chart(ctx,{
+                                            type:'line',
+                                            data:chartData1,
+                                        });
+                                        
+                                        var chartData2 = {
+                                            labels : [
+                                                '17/10/1','17/10/2','17/10/3','17/10/4','17/10/5'
+                                            ],
+                                            datasets : [{
+                                                label:'data1',
+                                                data:['5','4','3','4','6'],
+                                                backgroundColor:'rgba(0,255,0,1)',
+                                            }]
+                                        };
+            
+                                        ctx = document.getElementById("canvas2").getContext("2d");
+                                        new Chart(ctx,{
+                                            type:'bar',
+                                            data:chartData2,
+                                        });
+            
+                                        var chartData3 = {
+                                            labels : [
+                                                'data3'
+                                            ],
+                                            datasets : [{
+                                                label:'pie',
+                                                data:['5','4','3','4','6'],
+                                                backgroundColor:[
+                                                    'rgb(255,0,0)',
+                                                    'rgb(255,255,0)',
+                                                    'rgb(255,0,255)',
+                                                    'rgb(0,255,0)',
+                                                    'rgb(0,0,255)',
+                                                ],
+                                            }]
+                                        };
+            
+                                        ctx = document.getElementById("canvas3").getContext("2d");
+                                        new Chart(ctx,{
+                                            type:'pie',
+                                            data:chartData3,
+                                        });
+            
+            
+                                        AOS.init();
+                                        
+                                    }
+        );
+    </script>
+</body>
+</html>
