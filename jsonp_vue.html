@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue.js Axios.js Sample</title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://unpkg.com/vue"></script>
+	<style type="text/css">
+		#list{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<h3>hatena API get Qiita</h3>
+	<div id="list">
+		<ul v-for="bookmark in bookmarks">
+			<li>{{bookmark.user}}</li>
+		</ul>
+	</div>
+	<script>
+		$.ajax({
+			url:'http://b.hatena.ne.jp/entry/json/?url=https://qiita.com/',
+			type:'get',
+			dataType:'jsonp'
+		}).done(function(res){
+			//console.log(res);
+			new Vue({
+				el: '#list',
+				data : {
+					bookmarks : res.bookmarks
+				},
+				mounted : function(){
+					$('#list').show();
+				}
+			});
+		});
+	</script>
+</body>
+</html>
