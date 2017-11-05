@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>Crusel Exsample</title>
+    <title>Carousel Exsample</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/jquery.bxslider.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
@@ -15,6 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/siema@1.4.6/dist/siema.min.js"></script>
     <style>
         body{
             
@@ -44,6 +45,10 @@
         
         .swiper-container{
             width:100%;
+        }
+
+        .siema{
+            text-align: center;
         }
     </style>
 </head>
@@ -104,10 +109,10 @@
         <div class="item">
             <h3>6</h3>
         </div>
-   </div>
-   
-   <h2>Swiper</h2>
-   <div class="swiper-container">
+    </div>
+
+    <h2>Swiper</h2>
+    <div class="swiper-container">
        <div class="swiper-wrapper">
            <div class="swiper-slide">
                <h3>1</h3>
@@ -131,8 +136,18 @@
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
-   </div>
-   
+    </div>
+
+    <h2>Siema</h2>
+    <div class="siema">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
     <script>
         $(function() {
             $('.slick_item').slick({
@@ -167,6 +182,11 @@
                 pagination: '.swiper-pagination',
                 nextButton: '.swiper-button-next',
                 prevButton: '.swiper-button-prev'
+            });
+
+            new Siema({
+                perPage : 2,
+
             });
         });
     </script>
