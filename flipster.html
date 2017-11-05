@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>flipster sample</title>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/jquery.flipster@1.1.2/dist/jquery.flipster.min.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery.flipster@1.1.2/dist/jquery.flipster.min.js"></script>
+	<style type="text/css">
+		.box_base{
+			width: 300px;
+			height: 300px;
+			line-height: 300px;
+			text-align: center;
+			border: 1px solid #000;
+		}
+		.box_odd{
+			background-color: #ff69b4;
+		}
+		.box_even{
+			background-color: #98fb98;
+		}
+	</style>
+</head>
+<body>
+	<div class="flipster">
+		<ul>
+			<li><div class="box_base box_odd">1</div></li>
+			<li><div class="box_base box_even">2</div></li>
+			<li><div class="box_base box_odd">3</div></li>
+			<li><div class="box_base box_even">4</div></li>
+			<li><div class="box_base box_odd">5</div></li>
+			<li><div class="box_base box_even">6</div></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		$('.flipster').flipster({
+			loop : true,
+			buttons: true,
+			start : 0,
+		});
+	</script>
+</body>
+</html>
