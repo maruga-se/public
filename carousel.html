@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.green.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.3.0/tiny-slider.css">
+    <link rel="stylesheet" href="https://fastcdn.org/Glide.js/2.0.4/css/glide.core.min.css">
+    <link rel="stylesheet" href="https://fastcdn.org/Glide.js/2.0.4/css/glide.theme.min.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/jquery.bxslider.min.js"></script>
@@ -18,6 +20,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/siema@1.4.6/dist/siema.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.3.0/min/tiny-slider.js"></script>
+    <script src="https://fastcdn.org/Glide.js/2.0.4/glide.min.js"></script>
     <style>
         body{
             
@@ -55,6 +58,10 @@
 
         .tiny{
             text-align: center;   
+        }
+
+        .glide{
+            text-align: center;
         }
     </style>
 </head>
@@ -164,6 +171,20 @@
         <div>6</div>
     </div>
 
+    <h2>Glide</h2>
+    <div id="Glide" class="glide">
+        <div class="glide__wrapper">
+            <ul class="glide__track">
+                <li class="glide__slide">1</li>
+                <li class="glide__slide">2</li>
+                <li class="glide__slide">3</li>
+                <li class="glide__slide">4</li>
+                <li class="glide__slide">5</li>
+                <li class="glide__slide">6</li>
+            </ul>
+        </div>
+    </div>
+
     <script>
         $(function() {
             $('.slick_item').slick({
@@ -209,6 +230,11 @@
                 container : '.tiny',
                 items:2,
                 mouseDrag : true,
+            });
+
+            $("#Glide").glide({
+                type : 'carousel',
+                autoplay : false,
             });
 
         });
